@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 SECRET_KEY = 'django-insecure-zd)v(9jms!aqf-&6v8!f=a@*q15o_=3fe6nr#jt%902ex!41$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     "django.contrib.staticfiles",
-    "django.contrib.sites",
+
     # CKEditor apps
     "ckeditor",
     "ckeditor_uploader",
@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 
     # allauth apps
     "allauth",
-    "allauth.account",
 
 
 
@@ -112,12 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
-
-AUTHENTICATION_BACKENDS = [
-    'accounts.backends.EmailBackend',
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 
