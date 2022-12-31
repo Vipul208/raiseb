@@ -23,10 +23,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(
 SECRET_KEY = 'django-insecure-zd)v(9jms!aqf-&6v8!f=a@*q15o_=3fe6nr#jt%902ex!41$#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ["*"]
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -81,12 +77,6 @@ WSGI_APPLICATION = 'raiseb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
