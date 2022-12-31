@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+</header>
+    <section id="blog" class="section">
+      <!-- Container Starts -->
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title">Single Post</h2>
+          <hr class="lines">
+          </div>
+        
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            
+            <!-- Blog Item Starts -->
+            <div class="blog-item-wrapper">
+              <div class="blog-item-img">
+                <a href="single-post.html"  class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
+                  {% if blog.image %}
+                <a href="{{ event.get_absolute_url }}">
+                  <img src="{{ blog.image.url }}" alt="">
+                    </a>
+                {% endif %}
+                </a>                
+              </div>
+              <div class="blog-item-text"> 
+                <div class="meta-tags">
+                  <span class="date"><i class="lnr  lnr-clock"></i>{{ blog.date }}</span>
+
+                </div>
+                <h3>
+                  <a href="single-post.html" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">{{ blog.title }}</a>
+                </h3>
+                <p>
+                {{ blog.description|safe|linebreaks }}
+                </a></p>
+              </div>
+            <!-- Blog Item Wrapper Ends-->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+ 
+    <!-- Go To Top Link -->
+    <a href="#" class="back-to-top">
+      <i class="lnr lnr-arrow-up"></i>
+    </a>
+    
+    <div id="loader">
+      <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>
+    </div>     
+{% endblock %}

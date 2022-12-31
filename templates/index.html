@@ -1,40 +1,15 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Bootstrap, Parallax, Template, Registration, Landing">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
-    <title>RAISE - REC Bijnor</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/line-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.css' %}">
-    <link rel="stylesheet" href="{% static 'css/nivo-lightbox.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
-
-  </head>
-  <body>
-
+{% block content %}
     <!-- Header Section Start -->
-    <header id="hero-area" data-stellar-background-ratio="0.5">    
+    <header id="hero-area" data-stellar-background-ratio="0.5">
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <a href="index.html" class="navbar-brand"><img class="img-fluid" src="img/logo_11.png" alt=""></a>
+            <a href="index.html" class="navbar-brand"><img class="img-fluid" src="{% static 'img/logo_11.png' %}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
               <i class="lnr lnr-menu"></i>
             </button>
@@ -56,7 +31,7 @@
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#portfolios">Works</a>
               </li>
-             
+
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#team">Team</a>
               </li>
@@ -88,7 +63,7 @@
             <li>
               <a class="page-scroll" href="#portfolios">Works</a>
             </li>
-            
+
             <li>
               <a class="page-scroll" href="#team">Team</a>
             </li>
@@ -102,7 +77,7 @@
         <!-- Mobile Menu End -->
 
       </nav>
-      <!-- Navbar End -->   
+      <!-- Navbar End -->
       <div class="container">      
         <div class="row justify-content-md-center">
           <div class="col-md-10">
@@ -299,7 +274,7 @@
               <div class="video-promo-content text-center">
                 <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
                 <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">This is intro video of various work fieldset. </fieldset></p>
-                <a href="https://www.youtube.com/watch?v=IXoMDwh4Cq8" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="lnr lnr-film-play"></i></a>
+                <a href="media/{{ intros.0.video }}" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"><i class="lnr lnr-film-play"></i></a>
               </div>
           </div>
         </div>
@@ -468,70 +443,24 @@
           <p class="section-subtitle">RECB</p>
         </div>
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-xs-12">
+          {% for team in teams %}
+          <div class="col-lg-4 col-md-6 col-xs-12">
             <div class="single-team">
-              <img src="{% static 'img/team/team1.jpg' %}" alt="">
+              <img src="{{ team.image.url }}" alt="">
               <div class="team-details">
                 <div class="team-inner">
-                  <h4 class="team-title">Dr. Ishan Bhardwaj</h4>
-                  <p>Head</p>
+                  <h4 class="team-title">{{ team.name }}</h4>
+                  <p>{{ team.post }}</p>
                   <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="facebook"><a href="{{ team.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="{{ team.twitter_link }}"><i class="fa fa-twitter"></i></a></li>
+                    <li class="linkedin"><a href="{{ team.linkedin_link }}"><i class="fa fa-linkedin"></i></a></li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="{% static 'img/team/team2.jpg' %}" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title">Mr. Suraj Verma</h4>
-                  <p>Graphic Designer</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="{% static 'img/team/team3.jpg' %}" alt="">
-              <div class="team-details">
-                <div class="team-inner">                  
-                  <h4 class="team-title">Dr. Ishan Bhardwaj</h4>
-                  <p>Head</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img class="img-fulid" src="{% static 'img/team/team4.jpg' %}" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title">Mr. Suraj Verma</h4>
-                  <p>Graphic Designer</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>
@@ -543,38 +472,16 @@
         <div class="row justify-content-md-center">
           <div class="col-md-12">
             <div class="touch-slider owl-carousel owl-theme">
+              {% for test in testimonials %}
               <div class="testimonial-item">
-                <img src="{% static 'img/testimonial/customer2.jpg' %}" alt="Client Testimonoal" />
+                <img src="{{ test.image.url }}" alt="Client Testimonoal" />
                 <div class="testimonial-text">
-                  <p>wonderful experience!!</p>
-                  <h3>Jasmeet Kaur</h3>
-                  <span>Full Stack Developer</span>
+                  <p>{{ test.comment}}</p>
+                  <h3>{{ test.name }}</h3>
+                  <span>{{test.post}}</span>
                 </div>
               </div>
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonial/customer2.jpg' %}" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>wonderful experience!!</p>
-                  <h3>Omkar Malik</h3>
-                  <span>Data Analyst</span>
-                </div>
-              </div>
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonial/customer2.jpg' %}" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>wonderful experience!!</p>
-                  <h3>Ashish</h3>
-                  <span>Junior Engineer</span>
-                </div>
-              </div>
-              <div class="testimonial-item">
-                <img src="{% static 'img/testimonial/customer2.jpg' %}" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>wonderful experience!!</p>
-                  <h3>Prashant Bajpai</h3>
-                  <span>Data Scientist</span>
-                </div>
-              </div>
+              {% endfor %}
             </div>
           </div>
         </div>        
@@ -591,81 +498,33 @@
           <p class="section-subtitle">...</p>
           </div>
         <div class="row">
+          {% for blog in blogs %}
           <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-item">
             
             <!-- Blog Item Starts -->
             <div class="blog-item-wrapper">
               <div class="blog-item-img">
-                <a href="single-post.html"  class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">
-                  <img src="{% static 'img/blog/img1.jpg' %}" alt="">
+                <a href="{{blog.get_absolute_url}}" >
+                  <img src="{{blog.image.url}}" alt="">
                 </a>                
               </div>
               <div class="blog-item-text"> 
                 <div class="meta-tags">
-                  <span class="date"><i class="lnr  lnr-clock"></i>2 Days Ago</span>
+                  <span class="date"><i class="lnr  lnr-clock"></i>{{blog.date}}</span>
 
                 </div>
                 <h3>
-                  <a href="single-post.html" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">How often should you tweet?</a>
+                  <a href="{{blog.get_absolute_url}}" >{{blog.title}}</a>
                 </h3>
                 <p>
-                ... 
+                {{blog.description|safe|truncatewords:"20"}}
                 </a></p>
-                <a href="single-post.html" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s">Read More <i class="lnr lnr-arrow-right"></i></a>
+                <a href="{{blog.get_absolute_url}}" >Read More... <i class="lnr lnr-arrow-right"></i></a>
               </div>
             </div>
             <!-- Blog Item Wrapper Ends-->
           </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{% static 'img/blog/img2.jpg' %}" alt="">
-                </a>                
-              </div>
-              <div class="blog-item-text"> 
-                <div class="meta-tags">
-                  <span class="date"><i class="lnr  lnr-clock"></i>2 Days Ago</span>
-
-                </div>
-                <h3>
-                  <a href="single-post.html">Content is still king</a>
-                </h3>
-                <p>
-                ... 
-                </p>
-                <a href="single-post.html" class="btn-rm">Read More <i class="lnr lnr-arrow-right"></i></a>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{% static 'img/blog/img3.jpg' %}" alt="">
-                </a>                
-              </div>
-              <div class="blog-item-text"> 
-                <div class="meta-tags">
-                  <span class="date"><i class="lnr  lnr-clock"></i>2 Days Ago</span>
-             
-                </div> 
-                <h3>
-                  <a href="single-post.html">Social media at work</a>
-                </h3>
-                <p>
-                ... 
-                </p>
-                <a href="single-post.html" class="btn-rm">Read More <i class="lnr lnr-arrow-right"></i></a>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
+          {%endfor%}
         </div>
       </div>
     </section>
@@ -789,28 +648,4 @@
         <div class="double-bounce2"></div>
       </div>
     </div>     
-
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="{% static 'js/jquery-min.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.mixitup.js' %}"></script>
-    <script src="{% static 'js/nivo-lightbox.js' %}"></script>
-    <script src="{% static 'js/owl.carousel.js' %}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-    <script src="{% static 'js/jquery.nav.js' %}"></script>
-    <script src="{% static 'js/scrolling-nav.js' %}"></script>
-    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
-    <script src="{% static 'js/smoothscroll.js' %}"></script>
-    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
-    <script src="{% static 'js/wow.js' %}"></script>
-    <script src="{% static 'js/jquery.vide.js' %}"></script>
-    <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
-    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-    <script src="{% static 'js/waypoints.min.js' %}"></script>
-    <script src="{% static 'js/form-validator.min.js' %}"></script>
-    <script src="{% static 'js/contact-form-script.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-
-  </body>
-</html>
+{% endblock %}

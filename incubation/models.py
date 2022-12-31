@@ -32,6 +32,9 @@ class Team(models.Model):
     facebook_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
     twitter_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
     linkedin_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
+    image = models.ImageField(
+        upload_to="Team", default="Image/profile1.png", null=True, blank=True
+    )
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):

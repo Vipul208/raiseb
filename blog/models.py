@@ -43,7 +43,7 @@ class Blog(models.Model):
 
     def get_absolute_url(self, *args, **kwargs):
         kwargs = {"pk": self.id, "slug": self.slug}
-        return f"/events/{self.id}-{self.slug}/"
+        return f"/{self.id}-{self.slug}/"
 
     def save(self, *args, **kwargs):
         value = self.title
