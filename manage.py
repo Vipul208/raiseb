@@ -5,9 +5,9 @@ import sys
 
 if "ENVIRONMENT_NAME" in os.environ:
     environment_name = os.environ['ENVIRONMENT_NAME']
-    environment_settings_file = "raise.settings."+environment_name
+    environment_settings_file = "raiseb.settings."+environment_name
 else:
-    environment_settings_file = "raise.settings.base"
+    environment_settings_file = "raiseb.settings.base"
 
 
 def main():

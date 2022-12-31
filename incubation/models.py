@@ -29,9 +29,9 @@ class Testimonial(models.Model):
 class Team(models.Model):
     name = models.CharField(max_length=100)
     post = models.CharField(max_length=100)
-    facebook_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
-    twitter_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
-    linkedin_link = models.URLField(max_length=1000, default="raise.recb.ac.in", null=True, blank=True)
+    facebook_link = models.URLField(max_length=1000, default="raiseb.recb.ac.in", null=True, blank=True)
+    twitter_link = models.URLField(max_length=1000, default="raiseb.recb.ac.in", null=True, blank=True)
+    linkedin_link = models.URLField(max_length=1000, default="raiseb.recb.ac.in", null=True, blank=True)
     image = models.ImageField(
         upload_to="Team", default="Image/profile1.png", null=True, blank=True
     )
