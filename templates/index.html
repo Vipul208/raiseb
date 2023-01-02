@@ -9,7 +9,7 @@
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <a href="index.html" class="navbar-brand"><img class="img-fluid" src="{% static 'img/logo_11.png' %}" alt=""></a>
+            <a href="index.html" class="navbar-brand"><img class="img-fluid" src="{% static 'img/logo.png' %}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
               <i class="lnr lnr-menu"></i>
             </button>
@@ -22,21 +22,23 @@
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#about">About</a>
               </li>
-              <li class="nav-item">
+<!--              <li class="nav-item">
                 <a class="nav-link page-scroll" href="#features">Area</a>
               </li>
+-->
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#area">Support</a>
+                <a class="nav-link page-scroll" href="#area">Services</a>
               </li>
+<!--
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#portfolios">Works</a>
               </li>
-
+-->
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#team">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#blog">Blog</a>
+                <a class="nav-link page-scroll" href="#blog">Startups</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">Contact</a>
@@ -53,22 +55,24 @@
             <li>
               <a class="page-scroll" href="#about">About</a>
             </li>
+<!--
             <li>
               <a class="page-scroll" href="#features">Area</a>
             </li>
+-->
             <li>
-              <a class="page-scroll" href="#area">Support</a>
+              <a class="page-scroll" href="#area">Services</a>
             </li>
-
+<!--
             <li>
               <a class="page-scroll" href="#portfolios">Works</a>
             </li>
-
+-->
             <li>
               <a class="page-scroll" href="#team">Team</a>
             </li>
             <li >
-              <a class="page-scroll" href="#blog">Blog</a>
+              <a class="page-scroll" href="#blog">Startups</a>
             </li>
             <li>
               <a class="page-scroll" href="#contact">Contact</a>
@@ -85,7 +89,7 @@
               <h1 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s" style="margin-bottom: 0em;">R.A.I.S.E</h1>
               <h5 class="wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="0.3s">Research and Incubation Center</h5>
               <p class="lead  wow fadeIn" data-wow-duration="1000ms" data-wow-delay="400ms">For Startups & Enterpreneurs REC Bijnor</p>
-              <a href="#contact" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Contact</a>
+              <a href="#" class="btn btn-common wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">Apply Now</a>
             </div>
           </div>
         </div> 
@@ -176,20 +180,10 @@
                   </div>
                   <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
                     <span class="icon">
-                      <i class="lnr lnr-cloud-check"></i>
-                    </span>
-                    <div class="text">
-                      <h4>Access to Finacial & Industry Association</h4>
-                      <p>..</p>
-                    </div>
-                  </div>
-                  <div class="col-lg-6 col-sm-6 col-xs-12 box-item">
-                    <span class="icon">
                       <i class="lnr lnr-rocket"></i>
                     </span>
                     <div class="text">
-                      <h4>Innovative Ideas And Creative Thinking</h4>
-                      <p>..</p>
+                      <h4>Abbreviation</h4>
                     </div>
                   </div>
               </div>
@@ -287,13 +281,15 @@
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title">Our Portfolio</h2>
+          <h2 class="section-title">Supported By</h2>
           <hr class="lines">
-          <p class="section-subtitle">We appreciate <br> every Idea.</p>
+          <p class="section-subtitle">We appreciate <br> every individual and organisation.</p>
         </div>
-        <div class="row">          
+        <div class="row">
+                   <!-- Portfolio Controller/Buttons -->
+          <!--
           <div class="col-md-12">
-            <!-- Portfolio Controller/Buttons -->
+
             <div class="controls text-center">
               <a class="filter active btn btn-common" data-filter="all">
                 All 
@@ -308,71 +304,23 @@
                 Print 
               </a>
             </div>
-            <!-- Portfolio Controller/Buttons Ends-->
-          </div>
 
+          </div> -->
+ <!-- Portfolio Controller/Buttons Ends-->
           <!-- Portfolio Recent Projects -->
           <div id="portfolio" class="row">
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development print">
+
+            <div class="col-sm-4 col-md-4 col-lg-6 col-xl-6 mix development print">
               <div class="portfolio-item">
                 <div class="shot-item">
                   <img src="{% static 'img/portfolio/img1.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img1.jpg">
+                  <a class="overlay lightbox" href="{% static 'img/portfolio/img1.jpg' %}">
                     <i class="lnr lnr-eye item-icon"></i>
                   </a>
                 </div>               
               </div>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix design print">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="{% static 'img/portfolio/img2.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img2.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="{% static 'img/portfolio/img3.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img3.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="{% static 'img/portfolio/img4.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img4.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix development">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="{% static 'img/portfolio/img5.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img5.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-4 col-xl-4 mix print design">
-              <div class="portfolio-item">
-                <div class="shot-item">
-                  <img src="{% static 'img/portfolio/img6.jpg' %}" alt="" />
-                  <a class="overlay lightbox" href="img/portfolio/img6.jpg">
-                    <i class="lnr lnr-eye item-icon"></i>
-                  </a>
-                </div>               
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -384,7 +332,7 @@
     <!-- Counter Section Start -->
     <div class="counters section" data-stellar-background-ratio="0.5">
       <div class="container">
-        <div class="row"> 
+        <div class="row">
           <div class="col-sm-6 col-md-3 col-lg-3">
             <div class="facts-item">   
               <div class="icon">
@@ -393,28 +341,6 @@
               <div class="fact-count">
                 <h3><span class="counter">1589</span></h3>
                 <h4>Working Hours</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="facts-item">   
-              <div class="icon">
-                <i class="lnr lnr-briefcase"></i>
-              </div>            
-              <div class="fact-count">
-                <h3><span class="counter">699</span></h3>
-                <h4>Completed Projects</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-3 col-lg-3">
-            <div class="facts-item"> 
-              <div class="icon">
-                <i class="lnr lnr-user"></i>
-              </div>              
-              <div class="fact-count">
-                <h3><span class="counter">203</span></h3>
-                <h4>No. of Clients</h4>
               </div>
             </div>
           </div>
@@ -434,66 +360,11 @@
     </div>
     <!-- Counter Section End -->
 
-    <!-- Team section Start -->
-    <section id="team" class="section">
-      <div class="container">
-        <div class="section-header">          
-          <h2 class="section-title">Our Team</h2>
-          <hr class="lines">
-          <p class="section-subtitle">RECB</p>
-        </div>
-        <div class="row">
-          {% for team in teams %}
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-team">
-              <img src="{{ team.image.url }}" alt="">
-              <div class="team-details">
-                <div class="team-inner">
-                  <h4 class="team-title">{{ team.name }}</h4>
-                  <p>{{ team.post }}</p>
-                  <ul class="social-list">
-                    <li class="facebook"><a href="{{ team.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="{{ team.twitter_link }}"><i class="fa fa-twitter"></i></a></li>
-                    <li class="linkedin"><a href="{{ team.linkedin_link }}"><i class="fa fa-linkedin"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-    <!-- Team section End -->
-
-    <!-- testimonial Section Start -->
-    <div id="testimonial" class="section" data-stellar-background-ratio="0.1">
-      <div class="container">
-        <div class="row justify-content-md-center">
-          <div class="col-md-12">
-            <div class="touch-slider owl-carousel owl-theme">
-              {% for test in testimonials %}
-              <div class="testimonial-item">
-                <img src="{{ test.image.url }}" alt="Client Testimonoal" />
-                <div class="testimonial-text">
-                  <p>{{ test.comment}}</p>
-                  <h3>{{ test.name }}</h3>
-                  <span>{{test.post}}</span>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>        
-      </div>
-    </div>
-    <!-- testimonial Section Start -->
-
     <section id="blog" class="section">
       <!-- Container Starts -->
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title">Recent Blog</h2>
+          <h2 class="section-title">Our Startups</h2>
           <hr class="lines">
           <p class="section-subtitle">...</p>
           </div>
@@ -528,6 +399,67 @@
         </div>
       </div>
     </section>
+
+    <!-- testimonial Section Start -->
+    <div id="testimonial" class="section" data-stellar-background-ratio="0.1"><center>
+      <h2 class="wow zoomIn" style="" data-wow-duration="1000ms" data-wow-delay="100ms">Our Partners</h2>
+      <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">We are very grateful to each individual and organisation.  </fieldset></p>
+    </center>
+      <div class="container">
+        <div class="row justify-content-md-center">
+          <div class="col-md-12">
+            <div class="touch-slider owl-carousel owl-theme">
+              {% for test in testimonials %}
+              <div class="testimonial-item">
+                <img src="{{ test.image.url }}" alt="Client Testimonoal" />
+                <div class="testimonial-text">
+                  <p>{{ test.comment}}</p>
+                  <h3>{{ test.name }}</h3>
+                  <span>{{test.post}}</span>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- testimonial Section Start -->
+
+
+    <!-- Team section Start -->
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Team</h2>
+          <hr class="lines">
+          <p class="section-subtitle">RECB</p>
+        </div>
+        <div class="row">
+          {% for team in teams %}
+          <div class="col-lg-3 col-md-6 col-xs-12">
+            <div class="single-team">
+              <img src="{{ team.image.url }}" alt="">
+              <div class="team-details">
+                <div class="team-inner">
+                  <h4 class="team-title">{{ team.name }}</h4>
+                  <p>{{ team.post }}</p>
+                  <ul class="social-list">
+                    <li class="facebook"><a href="{{ team.facebook_link }}"><i class="fa fa-facebook"></i></a></li>
+                    <li class="twitter"><a href="{{ team.twitter_link }}"><i class="fa fa-twitter"></i></a></li>
+                    <li class="linkedin"><a href="{{ team.linkedin_link }}"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- Team section End -->
+
+
     <!-- Contact Section Start -->
     <section id="contact" class="section" data-stellar-background-ratio="-0.2">      
       <div class="contact-form">
@@ -537,21 +469,20 @@
               <div class="contact-us">
                 <h3>Contact With us</h3>
                 <div class="contact-address">
-                  <p>Rajniya Engineering College, Bijnor </p>
-                  <p class="phone">Phone: <span>(+91 XXXXXXXX87)</span></p>
-                  <p class="email">E-mail: <span>(incubation@recb.ac.in)</span></p>
+                  <p>RAISE, Rajkiya Engineering College, Bijnor </p>
+                  <p class="phone">Phone: <span>+91 8318698755</span><span> +91 8818897790</span></p>
+                  <p class="email">E-mail: <span>incubation.manager@recb.ac.in</span><span> incubation@recb.ac.in</span></p>
                 </div>
                 <div class="social-icons">
                   <ul>
                     <li class="facebook"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li class="twitter"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li class="google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li class="linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li class="twitter"><a href="https://twitter.com/ManagerRec"><i class="fa fa-twitter"></i></a></li>
+                    <li class="linkedin"><a href="https://www.linkedin.com/in/raise-rec-bijnor-55a534250"><i class="fa fa-linkedin"></i></a></li>
                     <li class="dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
                   </ul>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d42246.25604352426!2d78.24717527388124!3d29.13216814203695!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6f84c5006226847c!2sRajkiya%20Engineering%20College%20Bijnor!5e0!3m2!1sen!2sin!4v1671730847052!5m2!1sen!2sin" 
-                title="Rajkiya Engineering College Bijnor" aria-label="Rajkiya Engineering College Bijnor" 
+                title="Raise, Rajkiya Engineering College Bijnor" aria-label="Rajkiya Engineering College Bijnor"
                 width="95%" height="130" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
               </iframe>
               </div>
