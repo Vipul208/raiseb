@@ -2,23 +2,41 @@ from django.db import models
 
 
 # Create your models here.
-class Intro_video(models.Model):
-    title = models.CharField(max_length=100)
-    video = models.FileField(
-        upload_to="Intro_video", default="Image/profile1.png", null=True, blank=True
+class Slider(models.Model):
+    image = models.ImageField(
+        upload_to="Slider", default="Image/hero-area.jpg", null=True, blank=True
     )
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
-        return self.title
+        return self.image
 
 
-class Testimonial(models.Model):
+class Supported_By(models.Model):
+    image = models.ImageField(
+        upload_to="Supported_By", default="Image/hero-area.jpg", null=True, blank=True
+    )
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.image
+
+
+class Link(models.Model):
+    google_form_link = models.URLField(default="#", null=True, blank=True)
+    intro_video_link = models.URLField(default="#", null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
+
+    def __str__(self):
+        return self.id
+
+
+class Partner(models.Model):
     name = models.CharField(max_length=100)
     post = models.CharField(max_length=100)
     comment = models.CharField(max_length=300)
     image = models.ImageField(
-        upload_to="Testimonials", default="Image/profile1.png", null=True, blank=True
+        upload_to="Partners", default="Image/profile1.png", null=True, blank=True
     )
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 

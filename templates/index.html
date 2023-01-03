@@ -3,6 +3,7 @@
 
 {% block content %}
     <!-- Header Section Start -->
+
     <header id="hero-area" data-stellar-background-ratio="0.5">
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
@@ -268,7 +269,7 @@
               <div class="video-promo-content text-center">
                 <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Watch Our Intro video</h2>
                 <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">This is intro video of various work fieldset. </fieldset></p>
-                <a href="media/{{ intros.0.video }}" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"mkv><i class="lnr lnr-film-play"></i></a>
+                <a href="#" class="video-popup wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="0.3s"mkv><i class="lnr lnr-film-play"></i></a>
               </div>
           </div>
         </div>
@@ -409,7 +410,7 @@
         <div class="row justify-content-md-center">
           <div class="col-md-12">
             <div class="touch-slider owl-carousel owl-theme">
-              {% for test in testimonials %}
+              {% for test in partners %}
               <div class="testimonial-item">
                 <img src="{{ test.image.url }}" alt="Client Testimonoal" />
                 <div class="testimonial-text">

@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from .models import Blog
+from .models import StartUp
 
 
-class BlogAdmin(admin.ModelAdmin):
+class StartUpAdmin(admin.ModelAdmin):
     list_display = ['title', 'description', 'date']
     list_display_links = ['description', 'date']
     search_fields = ['title', 'slug', 'description']
@@ -14,4 +14,4 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(Blog, BlogAdmin)
+admin.site.register(StartUp, StartUpAdmin)

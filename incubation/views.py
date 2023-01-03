@@ -5,28 +5,28 @@ from django.core.mail import EmailMessage
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import get_object_or_404, render
 
-from blog.models import Blog
-from .models import Testimonial, Team, Intro_video
+from startup.models import StartUp
+from .models import Supported_By, Team, Slider, Partner, Link
 
 
 # Create your views here.
 
 def home(request):
     team = Team.objects.all()
-    testimonial = Testimonial.objects.all()
-    intro = Intro_video.objects.all().order_by('-id')
-    queryset = Blog.objects.all()
+    testimonial = Partner.objects.all()
+    intro = Slider.objects.all().order_by('-id')
+    queryset = StartUp.objects.all()
     paginator = Paginator(queryset, 25)
     page = request.GET.get('page')
     try:
-        blogs = paginator.page(page)
+        startups = paginator.page(page)
     except PageNotAnInteger:
-        blogs = paginator.page(1)
+        startups = paginator.page(1)
     except EmptyPage:
-        blogs = paginator.page(paginator.num_pages)
+        startups = paginator.page(paginator.num_pages)
     template = "index.html"
     context = {
-        "blogs": blogs,
+        "startups": startups,
         "teams": team,
         "testimonials": testimonial,
         "intros": intro,
@@ -35,9 +35,9 @@ def home(request):
 
 
 def detail_view(request, pk, slug):
-    obj = get_object_or_404(Blog, pk=pk, slug=slug)
+    obj = get_object_or_404(StartUp, pk=pk, slug=slug)
     template = "single-blog.html"
-    return render(request, template, context={"blog": obj})
+    return render(request, template, context={"startup": obj})
 
 
 def contacts(request):

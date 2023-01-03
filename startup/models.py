@@ -6,9 +6,9 @@ from django.utils.text import slugify
 # Create your models here.
 
 
-class BlogManager(models.Manager):
+class StartUpManager(models.Manager):
     def get_queryset(self):
-        return BlogQuerySet(self.model, using=self._db)
+        return StartUpQuerySet(self.model, using=self._db)
 
     def search(self, query=None):
         if query is None:
@@ -16,7 +16,7 @@ class BlogManager(models.Manager):
         return self.get_queryset().search(query)
 
 
-class BlogQuerySet(models.QuerySet):
+class StartUpQuerySet(models.QuerySet):
     def search(self, query):
         lookup = (
             Q(title__icontains=query)
@@ -26,7 +26,7 @@ class BlogQuerySet(models.QuerySet):
         return self.filter(lookup)
 
 
-class Blog(models.Model):
+class StartUp(models.Model):
 
     title = models.CharField(
         max_length=255, unique=True, blank=False, null=False)
@@ -36,7 +36,7 @@ class Blog(models.Model):
     image = models.ImageField()
     description = RichTextUploadingField(blank=True, null=True)
     date = models.DateField()
-    objects = BlogManager()
+    objects = StartUpManager()
 
     class Meta:
         ordering = ["-date"]
