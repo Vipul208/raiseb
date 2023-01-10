@@ -13,7 +13,7 @@ from .models import Supported_By, Team, Slider, Partner, Link
 
 def home(request):
     team = Team.objects.all()
-    testimonial = Partner.objects.all()
+    partner = Partner.objects.all()
     intro = Slider.objects.all().order_by('-id')
     queryset = StartUp.objects.all()
     paginator = Paginator(queryset, 25)
@@ -27,8 +27,8 @@ def home(request):
     template = "index.html"
     context = {
         "startups": startups,
+        "partners": partner,
         "teams": team,
-        "testimonials": testimonial,
         "intros": intro,
     }
     return render(request, template_name=template, context=context)
