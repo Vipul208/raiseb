@@ -6,9 +6,9 @@ from django.utils.text import slugify
 # Create your models here.
 
 
-class StartUpManager(models.Manager):
+class StartupManager(models.Manager):
     def get_queryset(self):
-        return StartUpQuerySet(self.model, using=self._db)
+        return StartupQuerySet(self.model, using=self._db)
 
     def search(self, query=None):
         if query is None:
@@ -16,7 +16,7 @@ class StartUpManager(models.Manager):
         return self.get_queryset().search(query)
 
 
-class StartUpQuerySet(models.QuerySet):
+class StartupQuerySet(models.QuerySet):
     def search(self, query):
         lookup = (
             Q(title__icontains=query)
@@ -26,7 +26,7 @@ class StartUpQuerySet(models.QuerySet):
         return self.filter(lookup)
 
 
-class StartUp(models.Model):
+class Startup(models.Model):
 
     title = models.CharField(
         max_length=255, unique=True, blank=False, null=False)
@@ -36,14 +36,16 @@ class StartUp(models.Model):
     image = models.ImageField()
     description = RichTextUploadingField(blank=True, null=True)
     date = models.DateField()
-    objects = StartUpManager()
+    apply_link = models.URLField(null=True, blank=True, default="")
+    is_active = models.BooleanField(default=True)
+    objects = StartupManager()
 
     class Meta:
         ordering = ["-date"]
 
     def get_absolute_url(self, *args, **kwargs):
         kwargs = {"pk": self.id, "slug": self.slug}
-        return f"/{self.id}-{self.slug}/"
+        return f"/events/{self.id}-{self.slug}/"
 
     def save(self, *args, **kwargs):
         value = self.title

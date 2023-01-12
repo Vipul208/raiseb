@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import StartUp
+from .models import Startup
 
 
 class StartUpAdmin(admin.ModelAdmin):
@@ -14,4 +14,4 @@ class StartUpAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(StartUp, StartUpAdmin)
+admin.site.register(Startup, StartUpAdmin)
