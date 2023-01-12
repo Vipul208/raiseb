@@ -14,7 +14,8 @@ from .models import Supported_By, Team, Slider, Partner, Link
 def home(request):
     team = Team.objects.all()
     partner = Partner.objects.all()
-    intro = Slider.objects.all().order_by('-id')
+    slider = Slider.objects.all().order_by('-id')
+    link = Link.objects.all().order_by('-id')
     queryset = StartUp.objects.all()
     paginator = Paginator(queryset, 25)
     page = request.GET.get('page')
@@ -27,9 +28,10 @@ def home(request):
     template = "index.html"
     context = {
         "startups": startups,
+        "sliders": slider,
         "partners": partner,
         "teams": team,
-        "intros": intro,
+        "links": link,
     }
     return render(request, template_name=template, context=context)
 
